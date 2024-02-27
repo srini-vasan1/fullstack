@@ -1,0 +1,18 @@
+image: node:14  # Use an appropriate Node.js version or choose another base image
+
+pipelines:
+  branches:
+    '{main}':
+      - step:
+          name: Node.js Build and Test
+          script:
+            - npm install
+            # Add additional build and test commands as needed
+
+      - step:
+          name: SonarQube analysis
+          script:
+            - pipe: sonarsource/sonarqube-scan:2.0.1
+              variables:
+                SONAR_HOST_URL: $SONAR_HOST_URL
+                SONAR_TOKEN: $SONAR_TOKEN
