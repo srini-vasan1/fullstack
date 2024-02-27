@@ -14,11 +14,9 @@ pipeline {
                     withSonarQubeEnv('sonarqube') {
                         sh """
                             ${scannerHome}/bin/sonar-scanner \
-                            -Dsonar.projectKey=fullstack \
+                            -Dsonar.projectKey=jenkins-node \
                             -Dsonar.sources=src \
                             -Dsonar.host.url=http://192.168.0.106:9000
-                            -Dsonar.login=sqa_2a6c334b3644b30a22598079e6c0668eec18a9ce
-
                         """
                     }
                 }
