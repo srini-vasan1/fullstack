@@ -1,6 +1,6 @@
 pipeline {
     agent { 
-        label 'jenkins-s'
+        label 'local'
     }
 
     environment {
