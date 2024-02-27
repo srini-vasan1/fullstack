@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent { 
+        label 'jenkins-s'
+    }
 
     environment {
         scannerHome = tool 'sonarqube'
