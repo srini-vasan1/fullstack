@@ -15,7 +15,7 @@ pipeline {
                         sh """
                             ${scannerHome}/bin/sonar-scanner \
                             -Dsonar.projectKey=jenkins-node \
-                            -Dsonar.sources=src \
+                            -Dsonar.sources=/opt/jenkins/workspace/fullstack/backend,/opt/jenkins/workspace/fullstack/frontend \
                             -Dsonar.host.url=http://192.168.0.106:9000
                         """
                     }
